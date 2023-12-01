@@ -1,3 +1,31 @@
-{% extends "Base.html" %} {% block content %}
-<h1>home</h1>
+{% extends "Base.html" %} {% load static %} {% block cssLink %} <link
+rel="stylesheet" href="{% static "css/style.css" %}">
+<div></div>
+{% endblock cssLink %}
+
+<div></div>
+{% block content %}
+<div class="kk">
+  <section class="container">
+    <div class="row py-5">
+      <div class="col-md-6 d-flex align-items-center">
+        <div>
+          <h1 class="text-white">
+            Food not just eating energy. It's an experience
+          </h1>
+          <p class="fs-6 text-white">
+            Discover a haven of exquisite flavors at Food Restaurant, where
+            culinary mastery meets exceptional hospitality. Experience artfully
+            crafted dishes, prepared with fresh, locally sourced ingredients.
+          </p>
+          <button class="btn btn-primary">Get Started</button>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <img class='img-fluid' src="{% static "images/banner-img.png" %}"
+        alt="pp">
+      </div>
+    </div>
+  </section>
+</div>
 {% endblock %}

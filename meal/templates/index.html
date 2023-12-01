@@ -1,3 +1,29 @@
 {% extends "Base.html" %} {% load static %} {% block content %}
-<h1>mealll</h1>
-<img src="{% static "images/download1.jpeg" %}" alt="pp"> {% endblock content %}
+<section class="container my-5">
+  <div class="mb-4">
+    <h1 class="text-center">List Menus for Restaurant</h1>
+  </div>
+  <section>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      {% for food in data.categories %}
+      <div class="col">
+        <div class="card">
+          <img src="{{food.strCategoryThumb}}" class="card-img-top" alt="..." />
+          <div class="card-body">
+            <div class="d-flex justify-content-between">
+              <h5 class="card-title">{{food.strCategory}}</h5>
+              <h5>{{food.idCategory}}</h5>
+            </div>
+
+            <p class="card-text">
+              {{food.strCategoryDescription | truncatewords:10}}
+            </p>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </section>
+</section>
+
+{% endblock content %}
